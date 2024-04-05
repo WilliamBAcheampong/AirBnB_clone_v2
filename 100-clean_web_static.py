@@ -8,7 +8,7 @@ fab -f 100-clean_web_static.py do_clean:number=2
 import os
 from fabric.api import *
 
-env.hosts = ['3.90.84.45', '34.232.67.3']
+env.hosts = ['34.229.71.58', '18.206.233.247']
 
 
 def do_clean(number=0):
@@ -30,4 +30,4 @@ def do_clean(number=0):
         archives = run("ls -tr").split()
         archives = [a for a in archives if "web_static_" in a]
         [archives.pop() for i in range(number)]
-        [run("rm -rf ./{}".format(a)) for a in arch
+        [run("rm -rf ./{}".format(a)) for a in archives]
